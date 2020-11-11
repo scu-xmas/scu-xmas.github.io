@@ -1,0 +1,96 @@
+@import "./fonts.css";
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* custom css */
+/* typography */
+h1 {
+  @apply text-5xl font-bold;
+}
+
+h2 {
+  @apply text-4xl font-bold;
+}
+
+h3 {
+  @apply text-3xl font-bold;
+}
+
+h4 {
+  @apply text-2xl font-bold;
+}
+
+p {
+  @apply mb-4 text-base font-light;
+}
+
+p:first-of-type {
+  @apply font-light;
+}
+
+p:last-of-type {
+  @apply mb-16;
+}
+
+ul {
+  @apply mb-8 font-light;
+}
+
+ul {
+  @apply text-lg font-light list-inside;
+}
+
+li {
+  @apply text-lg font-light list-disc;
+}
+
+/* buttons */
+.btn-color {
+  @apply p-3 mt-3 mb-8 text-sm font-light text-white transition duration-200 ease-in-out bg-purple-700 rounded;
+}
+
+.btn-color:hover {
+  @apply bg-purple-800;
+}
+
+.btn-mono {
+  @apply p-3 mt-3 mb-8 text-sm text-white transition duration-200 ease-in-out bg-gray-700 rounded;
+}
+
+.btn-mono:hover {
+  @apply bg-gray-800;
+}
+
+
+/* CONTENT */
+
+.panel.align-top {
+  align-items: flex-start;
+}
+.content-panel {
+  @apply bg-gray-200;
+  height: 200vh;;
+}
+
+.panel,
+.h-panel {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/* HEADINGS */
+.header-section {
+  padding: 0 15px;
+  text-align: center;
+  margin: 40vh auto 50vh;
+}
