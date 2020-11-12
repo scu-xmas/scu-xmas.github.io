@@ -16,7 +16,8 @@
     "tailwindcss": "^1.4.1"
   },
   "devDependencies": {
+    "browser-sync": "^2.26.7",
     "get-google-fonts": "^1.2.2",
-    "browser-sync": "^2.26.7"
+    "tailwindcss-textshadow": "^2.1.3"
   }
 }
