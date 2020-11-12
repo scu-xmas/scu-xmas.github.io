@@ -21,8 +21,18 @@ var container = document.getElementById("stage"),	w = window.innerWidth , h = wi
 
 function R(min,max) {return min+Math.random()*(max-min)};
 
-
-
+TweenMax.from("h1", 5, {
+  delay: 0,
+  y: "-=60px",
+  yoyo:true,
+  repeat:-1,
+  ease: "power2",
+  rotationX: 5,
+  rotationY: 0,
+  rotationZ: 0,
+  scale: 0,
+  y:0
+});
 
 TweenMax.to("h1", 2, {
   delay: 0,
@@ -32,7 +42,20 @@ TweenMax.to("h1", 2, {
   ease: "power2",
   rotationX: 5,
   rotationY: 360,
-  rotationZ: 0,
+  rotationZ: -360,
+  scale: .5,
+  y:+100
+});
+
+TweenMax.to("h1", 5, {
+  delay: 0,
+  y: "-=60px",
+  yoyo:true,
+  repeat:-1,
+  ease: "power2",
+  rotationX: 5,
+  rotationY: -360,
+  rotationZ: 360,
   scale: 1.5,
   y:-100
 });
