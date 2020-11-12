@@ -1,81 +1,3 @@
-
-// gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-
-// // --- .content-panel (light gray)---
-// var tl = gsap.timeline({
-//   scrollTrigger: {
-//     trigger: ".content-panel",
-//     scrub: true,
-//     pin: true,
-//     start: "top top",
-//     end: "bottom",
-//     markers: {
-//       startColor: "green",
-//       endColor: "red",
-//       fontSize: "18px",
-//       fontWeight: "bold",
-//       indent: 20,
-//     },
-//   },
-// });
-
-
-// // img
-// tl.from("img", {
-//   y: 40,
-//   scale: 0.9,
-//   opacity: 0,
-//   transformOrigin: "center center",
-//   ease: "power2",
-//   duration: .3,
-//   stagger:2,
-// });
-
-
-// tl.from("p", {
-//   opacity: 0,
-//   ease: "powerEase",
-//   start:"-=100%",
-//   y: 80,
-//   scale:.8,
-//   stagger:.5
-// });
-
-
-//   // button
-// tl.from("button", {
-//   y: 40,
-//   scale: 0.9,
-//   opacity: 0,
-//   transformOrigin: "center center",
-//   ease: "power2",
-//   duration: .3,
-//   stagger:2,
-// });
-
-// // Exit
-// tl.to("p, img, button", {
-//   y: 40,
-//   scale: 0.9,
-//   opacity: 0,
-//   transformOrigin: "center center",
-//   ease: "power2",
-//   start: "+=900",
-//   stagger:.3,
-// });
-
-// // tl.to(".content-panel", {
-// //   opacity: 0,
-// //   start:"+=700"
-// // });
-
-// gsap.utils.toArray("nav a").forEach(function (a) {
-//   a.addEventListener("click", function (e) {
-//     e.preventDefault();
-//     gsap.to(window, { duration: 1, scrollTo: e.target.getAttribute("href") });
-//   });
-// });
-
 var falling = true;
 
 TweenLite.set("#stage",{perspective:600})
@@ -102,5 +24,25 @@ function R(min,max) {return min+Math.random()*(max-min)};
 
 
 
+TweenMax.to("h1", 2, {
+  delay: 0,
+  y: "-=60px",
+  yoyo:true,
+  repeat:-1,
+  ease: "power2",
+  rotationX: 5,
+  rotationY: 360,
+  rotationZ: 0,
+  scale: 1.5,
+  y:-100
+});
 
+const tl = gsap.timeline(),
+    mainText = document.querySelector("h1"),
+    dur = 5,
+    del = 1;
+
+// Text rotation
+gsap.set(mainText, {transformOrigin: "center center", repeat: -1, rotation:0, duration:5, ease:"none", scale:1.2});
+gsap.to(mainText, { repeat: 1, duration: 5, yoyo:"true", ease:"none", scale: 1.1, delay: 2});
 
