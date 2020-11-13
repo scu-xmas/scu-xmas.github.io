@@ -215,6 +215,6 @@ header {
 /* H-SCROLL */
 .h-container {
   @apply flex flex-no-wrap h-screen;
-  width: 600%;
+  width: 500%;
 }
 

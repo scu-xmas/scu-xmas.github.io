@@ -40,12 +40,12 @@ gsap.to(sections, {
     pin: true,
     scrub: 1,
     snap: 1 / (sections.length - 1),
-    end: () => "+=" + document.querySelector(".h-container").offsetWidth
+    end: () => "+=0" + document.querySelector(".h-container").offsetWidth
   }
 });
 
 
-// sSCROLL DOWN ARROW
+// SCROLL DOWN ARROW
 gsap.to(".arrow", {
   y: 12,
   ease: "power1.inOut",
