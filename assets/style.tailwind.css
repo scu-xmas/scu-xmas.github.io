@@ -63,46 +63,158 @@ li {
 }
 
 /* Let it snow */
-body {
-  /* background-color: #111; */
-  @apply text-gray-200;
-  overflow: hidden;
-  animation: colorchange 40s linear 1s infinite;
-}
-
-@keyframes colorchange {
-  0% {
-    background: #2f2f2f;
-    color: @apply text-gray-200;
-  }
-  33% {
-    background: #005e86;
-    color: @apply text-gray-200;
-  }
-  66% {
-    background: #02675f;
-    color: @apply text-gray-200;
-  }
-  100% {
-    background: #5b6770;
-    color: @apply text-gray-200;
-  }
-}
-
 .dot {
-  width: 35px;
-  height: 35px;
+  width: 1.5rem;
+  height: 1.5rem;
   position: absolute;
   background: url(/assets/img/snow-sprite.png);
   background-size: 100% 100%;
 }
-html,
-body,
+
 #stage {
-  width: 100%;
-  height: 100%;
+  @apply fixed top-0 left-0 z-50 w-full h-screen;
 }
 
-h1 {
-  font-size: 6rem;
+/* FROM LOCAL */
+/* Page styles */
+
+.panel.align-top {
+  align-items: flex-start;
 }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
+
+.panel,.h-panel {
+  @apply relative flex items-center justify-center w-full h-screen p-6 text-lg font-bold text-center;
+}
+.panel:first-child {
+  @apply bg-gray-200;
+  animation: none;
+}
+
+body {
+  @apply overflow-x-hidden overflow-y-scroll;
+}
+
+
+/* HEADER */
+header {
+  @apply fixed top-0 left-0 z-50 px-8 pt-4 pb-8 bg-black opacity-50;
+  border-bottom-right-radius: 26px;
+}
+
+/* Logo repaint */
+.logo-row {
+  min-height: 110vh;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.logo-col {
+  min-height: 110vh;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.logo {
+  @apply w-24 mt-2 ml-2 cursor-pointer;
+  top: 2rem;
+  left:2rem;
+  transform: translate3d(0,0,0);
+  -webkit-transform-style: preserve-3d;
+}
+
+.startLogo {
+  position: fixed;
+
+}
+
+.altLogo {
+  position: absolute;
+  top:0px;
+  transform: translate3d(0,0,0);
+}
+.startLogo:active{
+    animation: repaint 1ms;
+}
+.whiteLogo {
+  fill: white;
+  stroke:white;
+}
+
+.blackLogo {
+  color: #1d1d1d;
+}
+
+#scroll {
+  position: fixed;
+  bottom: 40px;
+  right: 100px;
+  text-align: center;
+}
+
+@-webkit-keyframes repaint {
+    from {
+        width: 99.9%;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@-moz-keyframes repaint {
+    from {
+        width: 99.9%;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes repaint {
+    from {
+        width: 99.9%;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.repaint {
+    -webkit-animation: repaint 100ms;
+       -moz-animation: repaint 100ms;
+        -ms-animation: repaint 100ms;
+            animation: repaint 100ms;
+}
+
+/* HEADINGS */
+.header-section {
+  margin: 40vh auto 50vh;
+}
+
+/* SCROLL DOWN */
+.scroll-down {
+  @apply absolute overflow-visible text-lg font-normal text-black;
+  bottom: 30%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.scroll-down .arrow {
+  @apply relative w-8 h-8 mx-auto my-0 bg-contain;
+  top: -4px;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KPHBhdGggZmlsbD0iYmxhY2siIGQ9Ik00ODMuMiwxOTIuMmMtMjAuNS0yMC41LTUzLjUtMjAuOC03My43LTAuNkwyNTcsMzQ0LjFMMTA0LjUsMTkxLjZjLTIwLjItMjAuMi01My4yLTE5LjktNzMuNywwLjYKCWMtMjAuNSwyMC41LTIwLjgsNTMuNS0wLjYsNzMuN2wxOTAsMTkwYzEwLjEsMTAuMSwyMy40LDE1LjEsMzYuOCwxNWMxMy4zLDAuMSwyNi43LTQuOSwzNi44LTE1bDE5MC0xOTAKCUM1MDMuOSwyNDUuNyw1MDMuNywyMTIuNyw0ODMuMiwxOTIuMnoiLz4KPC9zdmc+);
+}
+
+/* H-SCROLL */
+.h-container {
+  @apply flex flex-no-wrap h-screen;
+  width: 600%;
+}
+

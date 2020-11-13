@@ -1,9 +1,65 @@
+// LOGO SWITCH
+
+function logoSwitch () {
+  $('.altLogo').each(function() {
+
+    var distance = $('.startLogo').offset().top - $(this).closest('.logo-row').offset().top;
+
+    TweenLite.to(this,0,{y:distance, force3D:true});
+
+  });
+};
+
+$(document).scroll(function() {logoSwitch();});
+
+logoSwitch();
+console.clear();
+var tl = new TimelineLite({paused: true});
+var dur = .5;
+tl.to(".OO", dur, {drawSVG: 0, ease: Sine.easeInOut});
+tl.fromTo(".OO", dur,
+      {drawSVG:"100% 100%", ease: Sine.easeIn},
+      {drawSVG: "100% 0%", ease: Sine.easeOut, immediateRender: false})
+
+
+$(".animate").mouseenter(function(){
+  if ( !tl.isActive() ) {
+    tl.play(0);
+  }
+});
+
+gsap.registerPlugin(ScrollTrigger);
+
+let sections = gsap.utils.toArray(".h-panel");
+
+gsap.to(sections, {
+  xPercent: -100 * (sections.length - 1),
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".h-container",
+    pin: true,
+    scrub: 1,
+    snap: 1 / (sections.length - 1),
+    end: () => "+=" + document.querySelector(".h-container").offsetWidth
+  }
+});
+
+
+// sSCROLL DOWN ARROW
+gsap.to(".arrow", {
+  y: 12,
+  ease: "power1.inOut",
+  repeat: -1,
+  yoyo: true,
+});
+
+// SNOW
 var falling = true;
 
 TweenLite.set("#stage", { perspective: 600 });
-TweenLite.set("img", { xPercent: "-50%", yPercent: "-50%" });
+TweenLite.set("#stage>img", { xPercent: "-50%", yPercent: "-50%" });
 
-var total = 30;
+var total = 50;
 var container = document.getElementById("stage"),
   w = window.innerWidth,
   h = window.innerHeight;
@@ -46,82 +102,4 @@ function animm(elm) {
 
 function R(min, max) {
   return min + Math.random() * (max - min);
-}
-
-TweenMax.from("h1", 5, {
-  delay: 0,
-  y: "-=60px",
-  yoyo: true,
-  repeat: -1,
-  ease: "power2",
-  rotationX: 5,
-  rotationY: 0,
-  rotationZ: 0,
-  scale: 0,
-  y: 0,
-});
-
-TweenMax.to("h1", 2, {
-  delay: 0,
-  y: "-=60px",
-  yoyo: true,
-  repeat: -1,
-  ease: "power2",
-  rotationX: 5,
-  rotationY: 360,
-  rotationZ: -360,
-  scale: 0.5,
-  y: +100,
-});
-
-TweenMax.to("h1", 5, {
-  delay: 0,
-  y: "-=60px",
-  yoyo: true,
-  repeat: -1,
-  ease: "power2",
-  rotationX: 5,
-  rotationY: -360,
-  rotationZ: 360,
-  scale: 1.5,
-  y: -100,
-});
-
-const tl = gsap.timeline(),
-  mainText = document.querySelector("h1"),
-  dur = 5,
-  del = 1;
-
-// Text rotation
-gsap.set(mainText, {
-  transformOrigin: "center center",
-  repeat: -1,
-  rotation: 0,
-  duration: 5,
-  ease: "none",
-  scale: 1.2,
-});
-gsap.to(mainText, {
-  repeat: 1,
-  duration: 5,
-  yoyo: "true",
-  ease: "none",
-  scale: 1.1,
-  delay: 2,
-});
-
-var blurElement = { a: 0 }; //start the blur at 0 pixels
-
-TweenMax.to(blurElement, 1, { a: 4, onUpdate: applyBlur, yoyo: true,
-  repeat: -1,
-  duration: 1,
-stagger: 0.4,
-ease: "steps(6)"});
-
-//here you pass the filter to the DOM element
-function applyBlur() {
-  TweenMax.set([".blur"], {
-    webkitFilter: "blur(" + blurElement.a + "px)",
-    filter: "blur(" + blurElement.a + "px)",
-  });
 }
