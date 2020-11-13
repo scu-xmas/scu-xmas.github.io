@@ -1,8 +1,13 @@
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { TweenLite } from 'gsap';
 gsap.registerPlugin(ScrollTrigger);
+
+
 // LOGO SWITCH
 
 function logoSwitch() {
-  $('.altLogo').each(function () {
+  $('.altLogo').each(function() {
 
     // eslint-disable-next-line max-len
     var distance = $('.startLogo').offset().top - $(this).closest('.logo-row').offset().top;
@@ -12,19 +17,14 @@ function logoSwitch() {
   });
 };
 
-$(document).scroll(function () { logoSwitch(); });
-
-logoSwitch();
-console.clear();
-var tl = new TimelineLite({ paused: true });
+$(document).scroll(function() { logoSwitch(); });
+var tl = new timeline({ paused: true });
 var dur = 0.5;
 tl.to('.OO', dur, { drawSVG: 0, ease: Sine.easeInOut });
 tl.fromTo('.OO', dur,
   { drawSVG: '100% 100%', ease: Sine.easeIn },
   { drawSVG: '100% 0%', ease: Sine.easeOut, immediateRender: false });
-
-
-$('.animate').mouseenter(function () {
+$('.animate').mouseenter(function() {
   if (!tl.isActive()) {
     tl.play(0);
   }
@@ -32,7 +32,6 @@ $('.animate').mouseenter(function () {
 
 
 let sections = gsap.utils.toArray('.h-panel');
-
 gsap.to(sections, {
   xPercent: -100 * (sections.length - 1),
   ease: 'none',

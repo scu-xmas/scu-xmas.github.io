@@ -1,4 +1,5 @@
+
 {
-  "extends": "strongloop",
+  "extends": "gsap",
   "parser": "babel-eslint"
 }
