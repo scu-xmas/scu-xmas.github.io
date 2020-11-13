@@ -3,6 +3,7 @@ module.exports = {
     mode: 'all',
     content: [
       './*.html',
+      './assets/js/*.js'
     ],
   },target: 'relaxed',
   prefix: '',
