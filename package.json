@@ -16,7 +16,10 @@
     "tailwindcss": "^1.4.1"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "browser-sync": "^2.26.7",
+    "eslint": "^7.13.0",
+    "eslint-config-strongloop": "^2.1.0",
     "get-google-fonts": "^1.2.2",
     "tailwindcss-textshadow": "^2.1.3"
   }
