@@ -1,3 +1,4 @@
+gsap.registerPlugin(ScrollTrigger);
 // LOGO SWITCH
 
 function logoSwitch() {
@@ -29,7 +30,7 @@ $('.animate').mouseenter(function () {
   }
 });
 
-gsap.registerPlugin(ScrollTrigger);
+
 let sections = gsap.utils.toArray('.h-panel');
 
 gsap.to(sections, {

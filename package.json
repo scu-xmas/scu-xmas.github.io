@@ -5,7 +5,8 @@
     "dev": "postcss assets/style.tailwind.css --output assets/style.css",
     "watch:dev": "npm run dev -w",
     "prod": "NODE_ENV=production npm run dev",
-    "watch": "run-p watch:dev sync"
+    "watch": "run-p watch:dev sync",
+    "pretest": "eslint --ignore-path .gitignore ."
   },
   "dependencies": {
     "autoprefixer": "^9.7.6",
@@ -16,7 +17,6 @@
     "tailwindcss": "^1.4.1"
   },
   "devDependencies": {
-    "babel-eslint": "^10.1.0",
     "browser-sync": "^2.26.7",
     "eslint": "^7.13.0",
     "eslint-config-strongloop": "^2.1.0",
