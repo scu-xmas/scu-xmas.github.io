@@ -99,8 +99,74 @@ gsap.to(sections, {
     snap: 1 / (sections.length - 1),
     end: () => "+=0" + document.querySelector(".h-container").offsetWidth,
   },
-}),
+});
+
+
+// TEXT & IMAGES
+//   ANIMATE (DIRECTIONAL)
+function animateFrom(elem, direction) {
+  direction = direction | 1;
+
+  var x = 0,
+      y = direction * 100;
+  if(elem.classList.contains("gstrigger_fromTop")) {
+    x = 0;
+    y = -100;
+  } else if(elem.classList.contains("gstrigger_fromBottom")) {
+    x = 0;
+    y = 100;
+  };
+
+  if(elem.classList.contains("gstrigger_fromLeft")) {
+    x = -100;
+    y = 0;
+  } else if(elem.classList.contains("gstrigger_fromRight")) {
+    x = 100;
+    y = 0;
+  };
+
+  gsap.fromTo(elem, {x: x, y: y, autoAlpha: 0}, {
+    duration: 2.5,
+    x: 0,
+    y: 0,
+    autoAlpha: 1,
+    ease: "expo",
+    overwrite: "auto",
+  });
+}
+
+function hide(elem) {
+  gsap.set(elem, {autoAlpha: 0, duration: 5});
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray(".gstrigger").forEach(function(elem) {
+    hide(elem); // assure that the element is hidden when scrolled into view
+
+    ScrollTrigger.create({
+      trigger: elem,
+      onEnter: function() { animateFrom(elem) },
+      onEnterBack: function() { animateFrom(elem, -1) },
+      onLeave: function() { hide(elem) } // assure that the element is hidden when scrolled into view
+    });
+  });
+});
+
+
+
 
 // ANIMATING ARROWS
-gsap.to(".arrow-down", { y: 6, ease: "power1.inOut", repeat: -1, yoyo: !0 });
-gsap.to(".arrow-right", { x: 6, ease: "power1.inOut", repeat: -1, yoyo: !0 });
+gsap.to(".arrow-down", {
+  y: 6,
+  ease: "power1.inOut",
+  repeat: -1,
+  yoyo: !0,
+});
+gsap.to(".arrow-right", {
+  x: 6,
+  ease: "power1.inOut",
+  repeat: -1,
+  yoyo: !0,
+});
