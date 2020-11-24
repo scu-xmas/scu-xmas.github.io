@@ -4,7 +4,8 @@ module.exports = {
     content: [
       './*.html','./assets/js/*.js'
     ],
-  }, target: 'relaxed',
+  },
+  target: 'relaxed',
   prefix: '',
   important: false,
   separator: ':',
