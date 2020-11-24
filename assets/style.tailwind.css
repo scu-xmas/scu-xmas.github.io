@@ -29,9 +29,9 @@ p:first-of-type {
   @apply font-light;
 }
 
-p:last-of-type {
+/* p:last-of-type {
   @apply mb-16;
-}
+} */
 
 ul {
   @apply mb-8 font-light;
@@ -46,20 +46,12 @@ li {
 }
 
 /* buttons */
-.btn-color {
-  @apply p-3 mt-3 mb-8 text-sm font-light text-white transition duration-200 ease-in-out bg-purple-700 rounded;
-}
-
-.btn-color:hover {
-  @apply bg-purple-800;
-}
-
 .btn-mono {
-  @apply p-3 mt-3 mb-8 text-sm text-white transition duration-200 ease-in-out bg-gray-700 rounded;
+  @apply p-3 mt-3 mb-8 text-lg text-gray-600 transition duration-200 ease-in-out bg-transparent border-2 border-gray-600;
 }
 
 .btn-mono:hover {
-  @apply bg-gray-800;
+  @apply text-gray-800 border-gray-800;
 }
 
 /* Let it snow */
@@ -72,7 +64,7 @@ li {
 }
 
 #stage {
-  @apply fixed top-0 left-0 z-50 w-full h-screen opacity-50;
+  @apply fixed top-0 left-0 z-30 w-full h-screen opacity-50;
 }
 
 /* FROM LOCAL */
@@ -82,14 +74,16 @@ li {
   align-items: flex-start;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   height: 100%;
   -webkit-overflow-scrolling: touch;
   overflow-scrolling: touch;
 }
 
-.panel,.h-panel {
+.panel,
+.h-panel {
   @apply relative flex items-center justify-center w-full h-screen p-6 text-lg font-bold text-center;
 }
 .panel:first-child {
@@ -100,7 +94,6 @@ html, body {
 body {
   @apply overflow-x-hidden overflow-y-scroll;
 }
-
 
 /* HEADER */
 header {
@@ -126,32 +119,28 @@ header {
 .logo {
   @apply w-24 mt-2 ml-2 cursor-pointer;
   top: 2rem;
-  left:2rem;
-  transform: translate3d(0,0,0);
+  left: 2rem;
+  transform: translate3d(0, 0, 0);
   -webkit-transform-style: preserve-3d;
 }
 
 .startLogo {
   position: fixed;
-
 }
 
 .altLogo {
   position: absolute;
-  top:0px;
-  transform: translate3d(0,0,0);
+  top: 0px;
+  transform: translate3d(0, 0, 0);
 }
-.startLogo:active{
-    animation: repaint 1ms;
+.startLogo:active {
+  animation: repaint 1ms;
 }
 .whiteLogo {
   fill: white;
-  stroke:white;
+  stroke: white;
 }
 
-.blackLogo {
-  color: #1d1d1d;
-}
 
 #scroll {
   position: fixed;
@@ -161,37 +150,34 @@ header {
 }
 
 @-webkit-keyframes repaint {
-    from {
-        width: 99.9%;
-    }
-    to {
-        width: 100%;
-    }
+  from {
+    width: 99.9%;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 @-moz-keyframes repaint {
-    from {
-        width: 99.9%;
-    }
-    to {
-        width: 100%;
-    }
+  from {
+    width: 99.9%;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes repaint {
-    from {
-        width: 99.9%;
-    }
-    to {
-        width: 100%;
-    }
+  from {
+    width: 99.9%;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 .repaint {
-    -webkit-animation: repaint 100ms;
-       -moz-animation: repaint 100ms;
-        -ms-animation: repaint 100ms;
-            animation: repaint 100ms;
+  animation: repaint 100ms;
 }
 
 /* HEADINGS */
@@ -215,6 +201,18 @@ header {
 /* H-SCROLL */
 .h-container {
   @apply flex flex-no-wrap h-screen;
-  width: 500%;
+  width: 700%;
 }
 
+body,
+html {
+  width: 100%;
+  height: 100%;
+  background: black;
+}
+canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

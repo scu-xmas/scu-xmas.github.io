@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Work Sans';
+  font-family: 'Graphik Web';
 
   font-style: normal;
 
@@ -7,11 +7,11 @@
 
   font-display: swap;
 
-  src: url('./Work_Sans-300-1.woff') format('woff');
+  src: url('./Graphik-Regular-Web.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Work Sans';
+  font-family: 'Graphik Web';
 
   font-style: normal;
 
@@ -19,7 +19,7 @@
 
   font-display: swap;
 
-  src: url('./Work_Sans-700-2.woff') format('woff');
+  src: url('./Graphik-Medium-Web.woff') format('woff');
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -18008,9 +18008,9 @@ p:first-of-type {
   font-weight: 300;
 }
 
-p:last-of-type {
-  margin-bottom: 4rem;
-}
+/* p:last-of-type {
+  @apply mb-16;
+} */
 
 ul {
   margin-bottom: 2rem;
@@ -18031,51 +18031,31 @@ li {
 
 /* buttons */
 
-.btn-color {
-  padding: 0.75rem;
-  margin-top: 0.75rem;
-  margin-bottom: 2rem;
-  font-size: 0.875rem;
-  font-weight: 300;
-  --text-opacity: 1;
-  color: #fff;
-  color: rgba(255, 255, 255, var(--text-opacity));
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
-  transition-duration: 200ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  --bg-opacity: 1;
-  background-color: #6b46c1;
-  background-color: rgba(107, 70, 193, var(--bg-opacity));
-  border-radius: 0.25rem;
-}
-
-.btn-color:hover {
-  --bg-opacity: 1;
-  background-color: #553c9a;
-  background-color: rgba(85, 60, 154, var(--bg-opacity));
-}
-
 .btn-mono {
   padding: 0.75rem;
   margin-top: 0.75rem;
   margin-bottom: 2rem;
-  font-size: 0.875rem;
+  font-size: 1.125rem;
   --text-opacity: 1;
-  color: #fff;
-  color: rgba(255, 255, 255, var(--text-opacity));
+  color: #718096;
+  color: rgba(113, 128, 150, var(--text-opacity));
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
   transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  --bg-opacity: 1;
-  background-color: #4a5568;
-  background-color: rgba(74, 85, 104, var(--bg-opacity));
-  border-radius: 0.25rem;
+  background-color: transparent;
+  border-width: 2px;
+  --border-opacity: 1;
+  border-color: #718096;
+  border-color: rgba(113, 128, 150, var(--border-opacity));
 }
 
 .btn-mono:hover {
-  --bg-opacity: 1;
-  background-color: #2d3748;
-  background-color: rgba(45, 55, 72, var(--bg-opacity));
+  --text-opacity: 1;
+  color: #2d3748;
+  color: rgba(45, 55, 72, var(--text-opacity));
+  --border-opacity: 1;
+  border-color: #2d3748;
+  border-color: rgba(45, 55, 72, var(--border-opacity));
 }
 
 /* Let it snow */
@@ -18092,7 +18072,7 @@ li {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 50;
+  z-index: 30;
   width: 100%;
   height: 100vh;
   opacity: 0.5;
@@ -18106,14 +18086,16 @@ li {
   align-items: flex-start;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   height: 100%;
   -webkit-overflow-scrolling: touch;
   overflow-scrolling: touch;
 }
 
-.panel,.h-panel {
+.panel,
+.h-panel {
   position: relative;
   display: flex;
   align-items: center;
@@ -18179,8 +18161,8 @@ header {
   margin-left: 0.5rem;
   cursor: pointer;
   top: 2rem;
-  left:2rem;
-  transform: translate3d(0,0,0);
+  left: 2rem;
+  transform: translate3d(0, 0, 0);
   -webkit-transform-style: preserve-3d;
 }
 
@@ -18190,22 +18172,18 @@ header {
 
 .altLogo {
   position: absolute;
-  top:0px;
-  transform: translate3d(0,0,0);
+  top: 0px;
+  transform: translate3d(0, 0, 0);
 }
 
-.startLogo:active{
+.startLogo:active {
   -webkit-animation: repaint 1ms;
           animation: repaint 1ms;
 }
 
 .whiteLogo {
   fill: white;
-  stroke:white;
-}
-
-.blackLogo {
-  color: #1d1d1d;
+  stroke: white;
 }
 
 #scroll {
@@ -18237,7 +18215,7 @@ header {
 
 .repaint {
   -webkit-animation: repaint 100ms;
-  animation: repaint 100ms;
+          animation: repaint 100ms;
 }
 
 /* HEADINGS */
@@ -18280,7 +18258,21 @@ header {
   display: flex;
   flex-wrap: nowrap;
   height: 100vh;
-  width: 500%;
+  width: 700%;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  background: black;
+}
+
+canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @media (min-width: 640px) {
@@ -87614,4 +87606,3 @@ header {
     text-shadow: none;
   }
 }
-

@@ -2,7 +2,7 @@ module.exports = {
   purge: {
     mode: 'all',
     content: [
-      './*.html',
+      './*.html','./assets/js/*.js'
     ],
   }, target: 'relaxed',
   prefix: '',

@@ -1,14 +1,14 @@
 @font-face {
-  font-family: 'Work Sans';
+  font-family: 'Graphik Web';
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url('./Work_Sans-300-1.woff') format('woff');
+  src: url('./Graphik-Regular-Web.woff') format('woff');
 }
 @font-face {
-  font-family: 'Work Sans';
+  font-family: 'Graphik Web';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('./Work_Sans-700-2.woff') format('woff');
+  src: url('./Graphik-Medium-Web.woff') format('woff');
 }
