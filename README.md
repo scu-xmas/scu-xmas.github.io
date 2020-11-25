@@ -14,7 +14,7 @@ then, to start the project locally:<br>
 This will be good enough for most things:<br>
 **npm run watch**
 
-Change document google fonts:<br>
+~~Change document google fonts:~~ Removed (Graphik added)<br>
 **npm run fonts**
 
 Run browser-sync server:<br>
@@ -23,8 +23,8 @@ Run browser-sync server:<br>
 Process everything, purge and minify:<br>
 **npm run dev**
 
-Process everything, purge and minify while watching for changes:<br>
+Process everything, while watching for changes:<br>
 **npm run watch:dev**
 
-Process everything, purge and minify in PROD:<br>
+Process everything, purge and minify for PROD:<br>
 **npm run prod**

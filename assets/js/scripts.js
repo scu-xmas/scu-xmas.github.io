@@ -84,8 +84,7 @@ gsap.registerPlugin(ScrollTrigger),
   $(document).scroll(function () {
     logoSwitch();
   }),
-  logoSwitch(),
-  console.clear();
+  logoSwitch();
 
 // HORIZONTAL SCROLL
 let sections = gsap.utils.toArray(".h-panel");
@@ -170,3 +169,6 @@ gsap.to(".arrow-right", {
   repeat: -1,
   yoyo: !0,
 });
+
+// CLEAR CONSOLE
+console.clear();

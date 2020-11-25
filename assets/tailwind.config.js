@@ -241,7 +241,7 @@ module.exports = {
     },
     fontFamily: {
       sans: [
-        '"Work Sans"',
+        '"Graphik Web"',
         'sans-serif',
         '"Apple Color Emoji"',
         '"Segoe UI Emoji"',

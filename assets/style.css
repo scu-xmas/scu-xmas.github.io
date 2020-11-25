@@ -7,7 +7,7 @@
 
   font-display: swap;
 
-  src: url('./Graphik-Regular-Web.woff') format('woff');
+  src: url('./fonts/Graphik-Regular-Web.woff') format('woff');
 }
 
 @font-face {
@@ -19,7 +19,7 @@
 
   font-display: swap;
 
-  src: url('./Graphik-Medium-Web.woff') format('woff');
+  src: url('./fonts/Graphik-Medium-Web.woff') format('woff');
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -439,7 +439,7 @@ ul {
  */
 
 html {
-  font-family: "Work Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 1 */
+  font-family: "Graphik Web", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 1 */
   line-height: 1.5; /* 2 */
 }
 
@@ -6074,7 +6074,7 @@ video {
 }
 
 .font-sans {
-  font-family: "Work Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Graphik Web", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .font-serif {
@@ -18073,7 +18073,7 @@ li {
   top: 0;
   left: 0;
   z-index: 30;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   opacity: 0.5;
 }
@@ -18253,6 +18253,13 @@ header {
 }
 
 /* H-SCROLL */
+
+/* @media only screen and (min-width: 640px) {
+  .h-container {
+    @apply flex flex-no-wrap h-screen;
+    width: 700%;
+  }
+} */
 
 .h-container {
   display: flex;
@@ -23713,7 +23720,7 @@ canvas {
   }
 
   .sm\:font-sans {
-    font-family: "Work Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: "Graphik Web", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
   .sm\:font-serif {
@@ -41046,7 +41053,7 @@ canvas {
   }
 
   .md\:font-sans {
-    font-family: "Work Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: "Graphik Web", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
   .md\:font-serif {
@@ -58379,7 +58386,7 @@ canvas {
   }
 
   .lg\:font-sans {
-    font-family: "Work Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: "Graphik Web", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
   .lg\:font-serif {
@@ -75712,7 +75719,7 @@ canvas {
   }
 
   .xl\:font-sans {
-    font-family: "Work Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: "Graphik Web", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
   .xl\:font-serif {
