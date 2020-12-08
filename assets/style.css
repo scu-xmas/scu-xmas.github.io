@@ -18042,6 +18042,13 @@ a:hover {
   }
 }
 
+/* INTRO GRAPHIC */
+
+.w-block {
+  width: 20rem;
+  height: auto;
+}
+
 /* buttons */
 
 .btn-mono { padding: 0.75rem; margin-top: 0.75rem; margin-bottom: 2rem; font-size: 1.125rem; --text-opacity: 1; color: #718096; color: rgba(113, 128, 150, var(--text-opacity)); transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); background-color: transparent; border-width: 2px; --border-opacity: 1; border-color: #718096; border-color: rgba(113, 128, 150, var(--border-opacity));

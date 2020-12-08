@@ -23,6 +23,12 @@ ul { @apply text-xl;}
 li { @apply text-xl;}
 }
 
+/* INTRO GRAPHIC */
+.w-block {
+  width: 20rem;
+  height: auto;
+}
+
 /* buttons */ .btn-mono { @apply p-3 mt-3 mb-8 text-lg text-gray-600 transition duration-200 ease-in-out bg-transparent border-2 border-gray-600; }
 .btn-mono:hover { @apply text-white border-white; }
 
