@@ -1,51 +1,3 @@
-// SNOW
-var falling = true;
-
-TweenLite.set("#stage", { perspective: 600 });
-
-var total = 50;
-var container = document.getElementById("stage");
-var w = window.innerWidth;
-var h = window.innerHeight;
-
-for (i = 0; i < total; i++) {
-  var Div = document.createElement("div");
-  TweenLite.set(Div, {
-    attr: { class: "dot" },
-    x: R(0, w),
-    y: R(-200, -150),
-    z: R(-200, 200),
-  });
-  container.appendChild(Div);
-  animm(Div);
-}
-function animm(elm) {
-  TweenMax.to(elm, R(6, 15), {
-    y: h + 100,
-    ease: Linear.easeNone,
-    repeat: -1,
-    delay: -15,
-  });
-  TweenMax.to(elm, R(4, 8), {
-    x: "+=100",
-    rotationZ: R(0, 180),
-    repeat: -1,
-    yoyo: true,
-    ease: Sine.easeInOut,
-  });
-  TweenMax.to(elm, R(2, 8), {
-    rotationX: R(0, 360),
-    rotationY: R(0, 360),
-    repeat: -1,
-    yoyo: true,
-    ease: Sine.easeInOut,
-    delay: -5,
-  });
-}
-function R(min, max) {
-  return min + Math.random() * (max - min);
-}
-
 // LOGO SWITCH
 function logoSwitch() {
   $(".altLogo").each(function () {
@@ -100,61 +52,67 @@ gsap.to(sections, {
   },
 });
 
-
 // TEXT & IMAGES
 //   ANIMATE (DIRECTIONAL)
 function animateFrom(elem, direction) {
   direction = direction | 1;
 
   var x = 0,
-      y = direction * 100;
-  if(elem.classList.contains("gstrigger_fromTop")) {
+    y = direction * 100;
+  if (elem.classList.contains("gstrigger_fromTop")) {
     x = 0;
     y = -100;
-  } else if(elem.classList.contains("gstrigger_fromBottom")) {
+  } else if (elem.classList.contains("gstrigger_fromBottom")) {
     x = 0;
     y = 100;
-  };
+  }
 
-  if(elem.classList.contains("gstrigger_fromLeft")) {
+  if (elem.classList.contains("gstrigger_fromLeft")) {
     x = -100;
     y = 0;
-  } else if(elem.classList.contains("gstrigger_fromRight")) {
+  } else if (elem.classList.contains("gstrigger_fromRight")) {
     x = 100;
     y = 0;
-  };
+  }
 
-  gsap.fromTo(elem, {x: x, y: y, autoAlpha: 0}, {
-    duration: 2.5,
-    x: 0,
-    y: 0,
-    autoAlpha: 1,
-    ease: "expo",
-    overwrite: "auto",
-  });
+  gsap.fromTo(
+    elem,
+    { x: x, y: y, autoAlpha: 0 },
+    {
+      duration: 2.5,
+      x: 0,
+      y: 0,
+      autoAlpha: 1,
+      ease: "expo",
+      overwrite: "auto",
+    }
+  );
 }
 
 function hide(elem) {
-  gsap.set(elem, {autoAlpha: 0, duration: 5});
+  gsap.set(elem, { autoAlpha: 0, duration: 5 });
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.utils.toArray(".gstrigger").forEach(function(elem) {
-    hide(elem); // assure that the element is hidden when scrolled into view
+  gsap.utils.toArray(".gstrigger").forEach(function (elem) {
+    hide(elem); // CHECK ELEMENT IS HIDDEN
 
     ScrollTrigger.create({
       trigger: elem,
-      onEnter: function() { animateFrom(elem) },
-      onEnterBack: function() { animateFrom(elem, -1) },
-      onLeave: function() { hide(elem) } // assure that the element is hidden when scrolled into view
+      onEnter: function () {
+        animateFrom(elem);
+      },
+      onEnterBack: function () {
+        animateFrom(elem, -1);
+      },
+      onLeave: function () {
+        hide(elem);
+      }, // CHECK ELEMENT IS HIDDEN
     });
   });
 });
-
-
-
 
 // ANIMATING ARROWS
 gsap.to(".arrow-down", {
