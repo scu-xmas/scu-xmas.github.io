@@ -1,3 +1,48 @@
+gsap.registerPlugin(ScrollTrigger);
+
+function hide(elem) {
+  gsap.set(elem, { autoAlpha: 0, duration: 5 });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray(".gstrigger").forEach(function (elem) {
+    hide(elem); // CHECK ELEMENT IS HIDDEN
+
+    ScrollTrigger.create({
+      trigger: elem,
+      onEnter: function () {
+        animateFrom(elem);
+      },
+      onEnterBack: function () {
+        animateFrom(elem, -1);
+      },
+      onLeave: function () {
+        hide(elem);
+      }, // CHECK ELEMENT IS HIDDEN
+    });
+  });
+});
+
+console.log("animate sections");
+
+// HORIZONTAL SCROLL
+let sections = gsap.utils.toArray(".h-panel");
+gsap.to(sections, {
+  xPercent: -100 * (sections.length - 1),
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".h-container",
+    pin: !0,
+    scrub: 1,
+    snap: 1 / (sections.length - 1),
+    end: () => "+=0" + document.querySelector(".h-container").offsetWidth,
+  },
+});
+
+console.log("horizontal scrolling");
+
 // LOGO SWITCH
 function logoSwitch() {
   $(".altLogo").each(function () {
@@ -32,25 +77,6 @@ function animm(e) {
 function R(e, t) {
   return e + Math.random() * (t - e);
 }
-gsap.registerPlugin(ScrollTrigger),
-  $(document).scroll(function () {
-    logoSwitch();
-  }),
-  logoSwitch();
-
-// HORIZONTAL SCROLL
-let sections = gsap.utils.toArray(".h-panel");
-gsap.to(sections, {
-  xPercent: -100 * (sections.length - 1),
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".h-container",
-    pin: !0,
-    scrub: 1,
-    snap: 1 / (sections.length - 1),
-    end: () => "+=0" + document.querySelector(".h-container").offsetWidth,
-  },
-});
 
 // TEXT & IMAGES
 //   ANIMATE (DIRECTIONAL)
@@ -88,31 +114,7 @@ function animateFrom(elem, direction) {
     }
   );
 }
-
-function hide(elem) {
-  gsap.set(elem, { autoAlpha: 0, duration: 5 });
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-  gsap.registerPlugin(ScrollTrigger);
-
-  gsap.utils.toArray(".gstrigger").forEach(function (elem) {
-    hide(elem); // CHECK ELEMENT IS HIDDEN
-
-    ScrollTrigger.create({
-      trigger: elem,
-      onEnter: function () {
-        animateFrom(elem);
-      },
-      onEnterBack: function () {
-        animateFrom(elem, -1);
-      },
-      onLeave: function () {
-        hide(elem);
-      }, // CHECK ELEMENT IS HIDDEN
-    });
-  });
-});
+console.log("text and images");
 
 // ANIMATING ARROWS
 gsap.to(".arrow-down", {
@@ -127,6 +129,7 @@ gsap.to(".arrow-right", {
   repeat: -1,
   yoyo: !0,
 });
+console.log("animate-arrows");
 
 // CLEAR CONSOLE
 console.clear();

@@ -37,33 +37,6 @@ a:hover {
   @apply transition-opacity duration-100 opacity-100;
 }
 
-@media only screen and (min-width: 960px) {
-  h1 {
-    @apply text-5xl;
-  }
-  h2 {
-    @apply text-4xl;
-  }
-  h3 {
-    @apply text-3xl;
-  }
-  h4 {
-    @apply text-2xl;
-  }
-  p {
-    @apply mb-4 text-xl font-light;
-  }
-  ul {
-    @apply mb-8 font-light;
-  }
-  ul {
-    @apply text-xl;
-  }
-  li {
-    @apply text-xl;
-  }
-}
-
 /* INTRO GRAPHIC */
 .w-block {
   width: 20rem;
@@ -103,18 +76,11 @@ body {
 }
 .panel,
 .h-panel {
-  @apply relative flex items-center justify-center w-full h-screen p-6 text-lg font-bold text-center;
+  @apply relative flex items-start justify-center w-full h-screen p-6 pt-16 text-lg font-bold text-center;
 }
 .panel:first-child {
   @apply bg-gray-200;
   animation: none;
-}
-
-/* H-SCROLL */
-@media only screen and (min-width: 640px) {
-  body {
-    @apply overflow-x-hidden overflow-y-scroll;
-  }
 }
 
 /* HEADER */
@@ -125,16 +91,6 @@ header {
 
 .logo-row {
   overflow: visible;
-}
-
-/* Logo repaint */
-@media only screen and (min-width: 640px) {
-  .logo-row {
-    min-height: 110vh;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-  }
 }
 
 .logo-col {
@@ -259,4 +215,48 @@ canvas {
 .ytube-holder {
   width: 100%;
   height: 342px;
+}
+
+/* H-SCROLL */
+@media only screen and (min-width: 640px) {
+  body {
+    @apply overflow-x-hidden overflow-y-scroll;
+  }
+  .logo-row {
+    min-height: 110vh;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  h1 {
+    @apply text-5xl;
+  }
+  h2 {
+    @apply text-4xl;
+  }
+  h3 {
+    @apply text-3xl;
+  }
+  h4 {
+    @apply text-2xl;
+  }
+  p {
+    @apply mb-4 text-xl font-light;
+  }
+  ul {
+    @apply mb-8 font-light;
+  }
+  ul {
+    @apply text-xl;
+  }
+  li {
+    @apply text-xl;
+  }
+  .panel,
+  .h-panel {
+    @apply items-center;
+  }
 }
