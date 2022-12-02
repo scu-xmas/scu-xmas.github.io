@@ -4,11 +4,11 @@ $c-2: #00a6b6;
 $c-3: #3994ce;
 $c-4: #a0cfca;
 $c-5: #140040;
-$page-gradient: radial-gradient(at 46% 35%, $c-1 0, $a-1 40%),
-radial-gradient(at 50% 60%, $c-2 0, $a-1 50%),
-radial-gradient(at 90% 50%, $c-3 0, $a-1 50%),
-radial-gradient(at 50% 10%, $c-4 0, $a-1 50%),
-radial-gradient(at 20% 50%, $c-5 0, $a-1 50%);
+$page-gradient: radial-gradient(at 46% 35%, $c-2 0, $c-1 50%),
+radial-gradient(at 50% 60%, $c-2 0, $c-3 50%),
+radial-gradient(at 90% 50%, $c-4 0, $c-5 50%),
+radial-gradient(at 50% 10%, $c-5 0, $c-1 50%),
+radial-gradient(at 20% 50%, $c-1 0, $a-1 50%);
 
 
 @font-face {
@@ -188,7 +188,7 @@ body {
   background: 0/200vmax 200vmax;
   background-image: $page-gradient;
   z-index: -1;
-  animation: 24s ease-in-out infinite move-bg;
+  animation: 12s ease-in-out infinite move-bg;
 }
 
 .panel {
