@@ -1,27 +1,44 @@
 {
+  "name": "scu-xmas-2022",
+  "version": "1.4.0",
+  "private": true,
+  "description": "SCU Xmas 2022",
+  "author": "mdo",
+  "license": "MIT",
   "scripts": {
-    "sync": "browser-sync start --server --files \"**/*\"",
-    "dev": "postcss assets/style.tailwind.css --output assets/style.css",
-    "watch:dev": "npm run dev -w",
-    "prod": "NODE_ENV=production npm run dev",
-    "watch": "run-p watch:dev sync",
-    "pretest": "eslint --ignore-path .gitignore ."
+    "build": "npm run css",
+    "css-compile": "node-sass --include-path node_modules --output-style compressed --source-map true --source-map-contents true --precision 6 scss -o assets/css/",
+    "css-lint": "stylelint scss/",
+    "css-prefix": "postcss --replace assets/css/starter.css --use autoprefixer --map",
+    "css-purge": "purgecss --keyframes --css assets/css/starter.css --content index.html \"node_modules/bootstrap/js/dist/{util,modal}.js\" --output assets/css/",
+    "css": "npm-run-all css-compile css-prefix",
+    "server": "serve --listen 3000",
+    "start": "npm-run-all --parallel watch server",
+    "watch": "nodemon -e html,scss -x \"npm run css\"",
+    "test": "npm run css-lint && npm run css"
   },
+  "keywords": [
+    "bootstrap",
+    "sass",
+    "css",
+    "javascript",
+    "starter",
+    "template"
+  ],
   "dependencies": {
-    "autoprefixer": "^9.7.6",
-    "cssnano": "^5.0.11",
-    "eslint-config-gsap": "^3.0.0",
-    "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.1",
-    "postcss-cli": "^8.0",
-    "postcss-import": "^12.0.1",
-    "postcss-loader": "^6.2.0",
-    "tailwindcss": "^2.2.19"
+    "bootstrap": "^4.6.2",
+    "rfs": "^9.0.6"
   },
   "devDependencies": {
-    "browser-sync": "^2.27.7",
-    "eslint": "^8.3.0",
-    "eslint-config-strongloop": "^2.1.0",
-    "tailwindcss-textshadow": "^2.1.3"
+    "autoprefixer": "^10.4.13",
+    "node-sass": "^6.0.1",
+    "nodemon": "^2.0.20",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.19",
+    "postcss-cli": "^8.3.1",
+    "purgecss": "^4.1.3",
+    "serve": "^11.3.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-twbs-bootstrap": "^2.2.4"
   }
 }

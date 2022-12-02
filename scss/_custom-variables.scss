@@ -1,0 +1,87 @@
+// Toggle global options
+$enable-caret: true;
+$enable-rounded: true;
+$enable-shadows: false;
+$enable-gradients: false;
+$enable-transitions: true;
+$enable-prefers-reduced-motion-media-query: true;
+$enable-grid-classes: true;
+$enable-pointer-cursor-for-buttons: true;
+$enable-print-styles: true;
+$enable-responsive-font-sizes: true;
+$enable-validation-icons: true;
+$enable-deprecation-messages: true;
+
+// Customize some defaults
+$body-color: #161616;
+$body-bg: #fff;
+$border-radius: .4rem;
+$dark-gray: #2f2f2f;
+$light-gray: #f2f2f2;
+$white: #ffffff;
+
+// Color system
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black: #000;
+
+$grays: ();
+$grays: map-merge(("100": $gray-100,
+    "200": $gray-200,
+    "300": $gray-300,
+    "400": $gray-400,
+    "500": $gray-500,
+    "600": $gray-600,
+    "700": $gray-700,
+    "800": $gray-800,
+    "900": $gray-900),
+  $grays);
+
+$blue: #005e86;
+$purple: #140040;
+$red: #ef4423;
+$orange: #f28b00;
+$yellow: #ffce00;
+$green: #28a126;
+$cyan: #a0cfca;
+
+$colors: ();
+$colors: map-merge(("blue": $blue,
+    "purple": $purple,
+    "red": $red,
+    "orange": $orange,
+    "yellow": $yellow,
+    "green": $green,
+    "cyan": $cyan,
+    "white": $white,
+    "gray": $light-gray,
+    "gray-dark": $dark-gray),
+  $colors);
+
+$primary: $blue;
+$secondary: $purple;
+$success: $green;
+$info: $cyan;
+$warning: $yellow;
+$danger: $red;
+$light: $light-gray;
+$dark: $dark-gray;
+
+$theme-colors: ();
+$theme-colors: map-merge(("primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "info": $info,
+    "warning": $warning,
+    "danger": $danger,
+    "light": $light,
+    "dark": $dark),
+  $theme-colors);

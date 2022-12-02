@@ -1,5 +1,0 @@
-
-{
-  "extends": "gsap",
-  "parser": "babel-eslint"
-}

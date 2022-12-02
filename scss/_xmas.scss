@@ -1,0 +1,229 @@
+$a-1: #005e86;
+$c-1: #3994ce;
+$c-2: #00a6b6;
+$c-3: #3994ce;
+$c-4: #a0cfca;
+$c-5: #140040;
+$page-gradient: radial-gradient(at 46% 35%, $c-1 0, $a-1 40%),
+radial-gradient(at 50% 60%, $c-2 0, $a-1 50%),
+radial-gradient(at 90% 50%, $c-3 0, $a-1 50%),
+radial-gradient(at 50% 10%, $c-4 0, $a-1 50%),
+radial-gradient(at 20% 50%, $c-5 0, $a-1 50%);
+
+
+@font-face {
+  font-family: "Graphik Web";
+  src: url("../graphik/Graphik-Medium-Web.woff2") format("woff2"),
+    url("../graphik/Graphik-Medium-Web.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Graphik Web";
+  src: url("../graphik/Graphik-Regular-Web.woff2") format("woff2"),
+    url("../graphik/Graphik-Regular-Web.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+
+@keyframes move-bg {
+
+  0%,
+  to {
+    background-position: 0 0;
+  }
+
+  25% {
+    background-position: 100% 0;
+  }
+
+  50% {
+    background-position: 100% 100%;
+  }
+
+  75% {
+    background-position: 0 100%;
+  }
+}
+
+/* fade */
+@keyframes fade-away {
+
+  0%,
+  to {
+    opacity: 0
+  }
+
+  50% {
+    opacity: 0.4
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html {
+  margin: 0;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
+
+h1 {
+  font-size: 3rem;
+  font-family: "Graphik Web";
+}
+
+h2 {
+  font-size: 2.6rem;
+  font-family: "Graphik Web";
+}
+
+h2,
+h1 {
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  font-size: 1.4rem;
+  font-family: "Graphik Web", sans-serif;
+}
+
+body,
+p {
+  font-weight: 400;
+}
+
+a {
+  font-weight: 500;
+  position: relative;
+  color: #140040;
+  text-decoration: none !important;
+
+  &:hover {
+    color: #140040;
+
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    background-color: #140040;
+    transform: scaleX(0);
+    transform-origin: top left;
+    transition: transform 0.3s ease;
+  }
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+  font-family: sans-serif, Arial;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.animationWindow {
+  height: 175vh;
+  background-color: #140040;
+  display: block;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+}
+
+#animation {
+  top: 50vh;
+  left: 10%;
+  width: 80%;
+}
+
+@media screen and (min-width: 960px) {
+  #animation {
+    top: 30vh;
+    width: 50%;
+    left: 25%;
+  }
+
+  .embed-responsive-item {
+    height: 362px;
+  }
+}
+
+.panel {
+  width: 100%;
+  height: 100vh;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  position: relative;
+  box-sizing: border-box;
+  padding: 3rem;
+}
+
+.intro-gradient {
+  background: 0/200vmax 200vmax;
+  background-image: $page-gradient;
+  z-index: -1;
+  animation: 24s ease-in-out infinite move-bg;
+}
+
+.panel {
+  &:nth-of-type(odd) {
+    background: white;
+    color: #2f2f2f;
+  }
+
+  &:nth-of-type(even) {
+    background: #f1f3f4;
+    color: #2f2f2f;
+  }
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.scrollDown {
+  opacity: 0.2;
+  bottom: 60px;
+  position: absolute;
+  transform: translate(0%, 80%);
+  color: white;
+  font-weight: 400;
+  font-size: 16px;
+  animation: infinite fade-away 2s;
+
+  .arrow {
+    position: relative;
+    top: -4px;
+    margin: 0 auto;
+    width: 20px;
+    height: 20px;
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+DQo8cGF0aCBmaWxsPSJ3aGl0ZSIgZD0iTTQ4My4yLDE5Mi4yYy0yMC41LTIwLjUtNTMuNS0yMC44LTczLjctMC42TDI1NywzNDQuMUwxMDQuNSwxOTEuNmMtMjAuMi0yMC4yLTUzLjItMTkuOS03My43LDAuNg0KCWMtMjAuNSwyMC41LTIwLjgsNTMuNS0wLjYsNzMuN2wxOTAsMTkwYzEwLjEsMTAuMSwyMy40LDE1LjEsMzYuOCwxNWMxMy4zLDAuMSwyNi43LTQuOSwzNi44LTE1bDE5MC0xOTANCglDNTAzLjksMjQ1LjcsNTAzLjcsMjEyLjcsNDgzLjIsMTkyLjJ6Ii8+DQo8L3N2Zz4=);
+    background-size: contain;
+  }
+}
