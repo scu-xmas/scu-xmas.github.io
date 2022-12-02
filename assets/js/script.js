@@ -55,7 +55,7 @@ LottieScrollTrigger({
   target: "#animation",
   path: "assets/img/TT-Animation.json",
   speed: "fast",
-  scrub: "onExit" //gsap values!
+  scrub: "0.2" //gsap values!
  });
 
 // text reveal
@@ -96,20 +96,7 @@ ScrollTrigger.create({
   // markers: true
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-  gsap.registerPlugin(ScrollTrigger);
 
-  gsap.utils.toArray(".reveal").forEach(function(elem) {
-    hide(elem); // assure that the element is hidden when scrolled into view
-
-    ScrollTrigger.create({
-      trigger: elem,
-      onEnter: function() { animateFrom(elem) },
-      onEnterBack: function() { animateFrom(elem, -1) },
-      onLeave: function() { hide(elem) } // assure that the element is hidden when scrolled into view
-    });
-  });
-});
 
 
 
@@ -217,3 +204,17 @@ function pauseVideo() {
 }
 
 
+document.addEventListener("DOMContentLoaded", function() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray(".reveal").forEach(function(elem) {
+    hide(elem); // assure that the element is hidden when scrolled into view
+
+    ScrollTrigger.create({
+      trigger: elem,
+      onEnter: function() { animateFrom(elem) },
+      onEnterBack: function() { animateFrom(elem, -1) },
+      onLeave: function() { hide(elem) } // assure that the element is hidden when scrolled into view
+    });
+  });
+});
