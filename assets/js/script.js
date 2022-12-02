@@ -40,7 +40,7 @@ function LottieScrollTrigger(vars) {
       duration: vars.duration || 0.5,
       delay: vars.delay || 0,
 			frame: animation.totalFrames - 1,
-			ease: vars.ease || "power2.inOut",
+			ease: vars.ease || "none",
 			onUpdate: () => animation.goToAndStop(playhead.frame, true),
 			scrollTrigger: st
 		});
@@ -54,8 +54,8 @@ function LottieScrollTrigger(vars) {
 LottieScrollTrigger({
   target: "#animation",
   path: "assets/img/TT-Animation.json",
-  speed: "fast",
-  scrub: "0.2" //gsap values!
+  speed: "medium",
+  scrub: "onExit" //gsap values!
  });
 
 // text reveal
@@ -96,7 +96,20 @@ ScrollTrigger.create({
   // markers: true
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+  gsap.registerPlugin(ScrollTrigger);
 
+  gsap.utils.toArray(".reveal").forEach(function(elem) {
+    hide(elem); // assure that the element is hidden when scrolled into view
+
+    ScrollTrigger.create({
+      trigger: elem,
+      onEnter: function() { animateFrom(elem) },
+      onEnterBack: function() { animateFrom(elem, -1) },
+      onLeave: function() { hide(elem) } // assure that the element is hidden when scrolled into view
+    });
+  });
+});
 
 
 
@@ -158,7 +171,6 @@ function checkScroll() {
 
 var tag = document.createElement("script");
 
-// tag.src = "iframe_api";
 tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName("script")[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
@@ -204,17 +216,3 @@ function pauseVideo() {
 }
 
 
-document.addEventListener("DOMContentLoaded", function() {
-  gsap.registerPlugin(ScrollTrigger);
-
-  gsap.utils.toArray(".reveal").forEach(function(elem) {
-    hide(elem); // assure that the element is hidden when scrolled into view
-
-    ScrollTrigger.create({
-      trigger: elem,
-      onEnter: function() { animateFrom(elem) },
-      onEnterBack: function() { animateFrom(elem, -1) },
-      onLeave: function() { hide(elem) } // assure that the element is hidden when scrolled into view
-    });
-  });
-});
