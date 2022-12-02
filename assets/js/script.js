@@ -54,7 +54,7 @@ function LottieScrollTrigger(vars) {
 LottieScrollTrigger({
   target: "#animation",
   path: "assets/img/TT-Animation.json",
-  speed: "medium",
+  speed: "fast",
   scrub: "onExit" //gsap values!
  });
 
