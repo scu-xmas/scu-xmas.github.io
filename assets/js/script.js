@@ -53,7 +53,7 @@ function LottieScrollTrigger(vars) {
 // Lottie animation
 LottieScrollTrigger({
   target: "#animation",
-  path: "../img/TT-Animation.json",
+  path: "assets/img/TT-Animation.json",
   speed: "medium",
   scrub: "onExit" //gsap values!
  });
